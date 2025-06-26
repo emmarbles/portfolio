@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emmarbles</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/13186da3e1.js" crossorigin="anonymous"></script>
+</head>
+<header>
+<div id="header">
+    <div class="top">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contacto">Contact</a></li>
+                <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <h1>Hello! I'm <span><strong>Emma</strong></span></h1>
+            <p><em>Programmer | Developer | Editor</em></p>
+        </div>
+    </div>
+</div>
+</header>
+<body>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <br>
+                <p>I've completed four years of Computer Science and I am currently enrolled in Data Science Engineering. I posses knowledge and skills in programming languages such as Python, C, R and others, as well as proficency in web programming with HTML and JS. I have experience with AI development in both Machine Learning and Generative AI and hold years of experience in media production mainly in the video and audio editing fields. Finally I have also partaken in Game Development projects utilizing tools such as Unity, Blender, and Game Maker.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Certificates</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Programming/Development</span><br>Knowledge in developing web applications in HTML/CSS and JavaScript.</li>
+                        <li><span>Game Development</span><br>I've created video game applications in both Python and C# and know how to work tools like Unity and Blender with ease. </li>
+                        <li><span>Data/Computer Science</span><br>I have education in both computer science and data science with proficency in statistics, differential mathematics and data analysis.</li>
+                        <li><span>AI Development</span><br>I have developed and trained machine learning models and generative AI models</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                            <li><span>Effective Leadership Communication</span><br>Monterrey Institute of Technology and Higher Education</li>
+                        <li><span>Introduction to Machine Learning</span><br>AWS Academy</li>
+                        <li><span> Machine Learning Foundations</span><br>AWS Academy</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Texas Tech University</span><br>Bachelor of Engineering - BE, Computer Science<br>Jan 2019 – Jan 2023</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">Services</h1>
+        <div class="services-list">
+            <div>
+                <h2><strong>UI/UX</strong></h2><br>
+                <p>I can build and design a website or app for both desktop and mobile. Your application and/or webpage will be expertly designed for a better user experience.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <h2><strong>AI Development</strong></h2><br>
+                <p>I will create and develop AI tools that can be implemented into different projects or built into their own application for users or personl need. </p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <h2><strong>Video Editing</strong></h2><br>
+                <p>I provide free lancing editing work for personal and commerical needs. I have worked as an editor for multiple clients on YouTube and have worked in tandem with other editors in conjoined projects.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>      
+</div>
+<div id="contacto">
+    <div class="container">
+        <div class="row">
+            <div class="contacto-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i>theemmarbles@gmail.com</p>
+                <div class="social-icons">                    
+                    <a href="https://x.com/theemmarbles"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://github.com/emmarbles"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contacto-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Name" required>
+                    <input type="email" name="Email" placeholder="Email" required>
+                    <textarea name="Message" rows="6" placeholder="Message"></textarea>
+                    <button type="submit" class="btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script> 
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwy9g5xpN1CIGEy8gRHM6IKboZMvYHCI-O0Brg5eIMesuTj2FxQZKJaBjwKcX5bKvvl/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Messege Sent"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        }, 5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+<footer>
+    <div class="copyright">
+        <p>Copyright © Emma Madrigal 2025</p>
+    </div>
+</footer>
+</html>
